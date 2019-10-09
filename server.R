@@ -91,7 +91,7 @@ shinyServer(function(input, output, session) {
                        )
                     )
          ),
-         tags$p(withMathJax(sprintf("$$ P(%.2f \\le \\mu \\le %.2f) = 0.95$$", mean(numA)-err, mean(numA)+err)))
+         tags$p(sprintf("$$ P(%.2f \\le \\mu \\le %.2f) = 0.95$$", mean(numA)-err, mean(numA)+err))
       ))
       # output$infoA = renderUI({
          # withMathJax(

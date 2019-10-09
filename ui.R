@@ -1,5 +1,6 @@
 library(shiny)
 library(readr)
+source('katex.r', encoding = 'utf-8')
 
 indio <- gsub("[,.!?\r ]", " ", read_file("indio.txt"))
 
@@ -23,7 +24,8 @@ shinyUI(navbarPage("Amostragem", header = list(includeCSS("estilo.css")),
 				strong("Palavras"),
 				textOutput("amostra")
 			),
-			mainPanel(plotOutput("plotA"),
+			mainPanel(KaTeX(),
+						 plotOutput("plotA"),
 						 htmlOutput("infoA"))
 		)),
 		footer = list(
