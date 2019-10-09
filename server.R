@@ -1,9 +1,9 @@
 library(shiny)
 library(readr)
 
-indio <- gsub(" +", " ", gsub("[,.!?\r]+", " ", read_file("indio.txt")))
-monte <- gsub(" +", " ", gsub("[,.!?\r]+", " ", read_file("monte.txt")))
-cowboy = gsub(" +", " ", gsub("[,.!?\r]+", " ", read_file("cowboy.txt")))
+indio <- gsub(" +", " ", gsub("[,.!?\r]+", " ", read_file("letras/indio.txt")))
+monte <- gsub(" +", " ", gsub("[,.!?\r]+", " ", read_file("letras/monte.txt")))
+cowboy = gsub(" +", " ", gsub("[,.!?\r]+", " ", read_file("letras/cowboy.txt")))
 letras = c(indio, monte, cowboy)
 
 shinyServer(function(input, output, session) {

@@ -2,9 +2,9 @@ library(shiny)
 library(readr)
 source('katex.r', encoding = 'utf-8')
 
-indio <- gsub("[,.!?\r ]", " ", read_file("indio.txt"))
+indio <- gsub("[,.!?\r ]", " ", read_file("letras/indio.txt"))
 
-shinyUI(navbarPage("Amostragem", header = list(includeCSS("estilo.css")),
+shinyUI(navbarPage("Amostragem", header = list(includeCSS("www/estilo.css"), KaTeX()),
 		tabPanel("População", sidebarLayout(
 			sidebarPanel(
 				textAreaInput("texto", "Texto", value = indio, height = "15em"),
@@ -24,8 +24,7 @@ shinyUI(navbarPage("Amostragem", header = list(includeCSS("estilo.css")),
 				strong("Palavras"),
 				textOutput("amostra")
 			),
-			mainPanel(KaTeX(),
-						 plotOutput("plotA"),
+			mainPanel(plotOutput("plotA"),
 						 htmlOutput("infoA"))
 		)),
 		footer = list(
