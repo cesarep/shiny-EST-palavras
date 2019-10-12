@@ -4,7 +4,7 @@ source('katex.r', encoding = 'utf-8')
 
 indio <- gsub("[,.!?\r ]", " ", read_file("letras/indio.txt"))
 
-shinyUI(navbarPage("Amostragem", header = list(includeCSS("www/estilo.css"), KaTeX()),
+shinyUI(navbarPage("Estimação de Média", header = list(includeCSS("www/estilo.css"), KaTeX()),
 		tabPanel("População", sidebarLayout(
 			sidebarPanel(
 				textAreaInput("texto", "Texto", value = indio, height = "15em"),
